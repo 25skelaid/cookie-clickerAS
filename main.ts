@@ -37,22 +37,62 @@ input.onButtonPressed(Button.A, function () {
             G_Click_Multi = 1
         } else if (gold_action == 2) {
             gma_power += gma_power / 10 * Gma_amount
+            basic.showString("Gma")
+            basic.showLeds(`
+                . . # . .
+                . # # # .
+                # . # . #
+                . . # . .
+                . . # . .
+                `)
             basic.pause(13000)
             gma_power += gma_power / 10 * Gma_amount * -1
         } else if (gold_action == 3) {
             Farm_power += Farm_power / 10 * farm_amount
+            basic.showString("Farm")
+            basic.showLeds(`
+                . . # . .
+                . # # # .
+                # . # . #
+                . . # . .
+                . . # . .
+                `)
             basic.pause(13000)
             Farm_power += Farm_power / 10 * farm_amount / -1
         } else if (gold_action == 4) {
             mine_power += mine_power / 10 * mine_amount
+            basic.showString("Mine")
+            basic.showLeds(`
+                . . # . .
+                . # # # .
+                # . # . #
+                . . # . .
+                . . # . .
+                `)
             basic.pause(13000)
             mine_power += mine_power / 10 * mine_amount * -1
         } else if (gold_action == 5) {
             factory_power += factory_power / 10 * factory_amount
+            basic.showString("Fact")
+            basic.showLeds(`
+                . . # . .
+                . # # # .
+                # . # . #
+                . . # . .
+                . . # . .
+                `)
             basic.pause(13000)
             factory_power += factory_power / 10 * factory_amount / -1
         } else {
             bank_power += bank_power / 10 * bank_amount
+            basic.showString("Bank")
+            basic.showLeds(`
+                . # # . .
+                . # # # .
+                # . # . #
+                . . # . .
+                . . # . .
+                `)
             basic.pause(13000)
             bank_power += bank_power / 10 * bank_amount * -1
         }
@@ -158,9 +198,11 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     }
 })
 let cps_total = 0
+let gold_miss = 0
 let cps = 0
 let upgrade_loop = 0
 let gold_action = 0
+let gold_cookie = false
 let bank_amount = 0
 let factory_amount = 0
 let mine_amount = 0
@@ -183,13 +225,10 @@ let cps_multi = 0
 let Upgrade_no_2 = 0
 let Farm_power = 0
 let mode = 0
-let gold_cookie = false
 let G_CPS_Multi = 0
 let G_Click_Multi = 0
 G_Click_Multi = 1
 G_CPS_Multi = 1
-let gold_miss = 0
-gold_cookie = false
 mode = 0
 Farm_power = 8
 Upgrade_no_2 = 0
